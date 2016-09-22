@@ -129,7 +129,7 @@ class Main {
      * @param {function} callback - 加载成功回调
      */
     loadData(callback) {
-        let neiHost = 'http://nei.netease.com/';
+        let neiHost = 'http://localhost:8082/';
         let projectKey = this.args.key;
         let specType = {
                 web: neiDbConst.CMN_TYP_WEB,
