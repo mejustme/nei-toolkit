@@ -164,7 +164,7 @@ class Main {
             callback(json.result);
         });
     }
-    
+
     /**
      * 检测指定的目录中是否存在 nei 配置文件
      */
@@ -212,7 +212,7 @@ class Main {
         }
         let specArgsConfig = spec.spec.argsConfig;
         let proArgs = {};
-        this.ds.cliargs&&this.ds.cliargs.forEach(function (cliarg) {
+        this.ds.cliargs.forEach(function (cliarg) {
             proArgs[cliarg.key] = cliarg.value;
         });
         let specCliArgDoc = null;
@@ -240,7 +240,7 @@ class Main {
         }
         this.args = Object.assign({}, specArgs, proArgs, this.args);
     }
-    
+
     /**
      * 查找指定输出目录下的 nei 项目
      */
