@@ -16,7 +16,7 @@ module.exports = {
       {{#if list}}
       "{{method}} {{{path}}}": { name: '{{name}}', index: 0, list: {{{list}}} },
       {{else}}
-      "{{method}} {{{path}}}": { path: '{{mockFile}}', id: {{id}} },
+      "{{method}} {{{path}}}": { path: '{{mockFile}}', id: {{id}}, group: '{{{group}}}' },
       {{/if}}
       {{/each}}
     },
@@ -29,16 +29,25 @@ module.exports = {
     },
     {{else}}
     apiResHeaders: {
-        // 可跨域访问
-        'Access-Control-Allow-Origin': '*'
+        // 设置可跨域访问时，取消注释以下内容, 并按需要配置
+        // 'Access-Control-Allow-Origin': 'http://localhost:8080',
+        // 'Access-Control-Allow-Credentials': 'true',
+        // 'Access-Control-Allow-Headers': 'Content-Type',
+        // 'Access-Control-Allow-Methods': 'GET, POST, HEAD, OPTIONS, PUT, DELETE, PATCH'
     },
     {{/if}}
     /* 是否自动打开浏览器 */
     launch: {{launch}},
+    /* 自动打开的页面地址 */
+    openUrl: '{{openUrl}}',
     /* 端口 */
     port: {{port}},
+    /* 是否使用 https 协议，设为true的时候表示启用 */
+    https: {{https}},
     /* 是否使用 nei 提供的在线 mock 数据 */
     online: {{online}},
+    /* 是否监听静态文件和模板文件的变化并自动刷新浏览器 */
+    reload: {{reload}},
     /* 项目的 key */
     projectKey: '{{projectKey}}',
     /* 同步模块mock数据路径 */
